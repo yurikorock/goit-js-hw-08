@@ -76,6 +76,8 @@ const galleryMarkup = images
       src="${preview}"
       data-source="${original}"
       alt="${description}"
+      width = "360"
+      heihgt = "200"
     />
   </a>
 </li>`
