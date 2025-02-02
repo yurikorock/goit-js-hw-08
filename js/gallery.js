@@ -85,3 +85,19 @@ const galleryMarkup = images
   .join("");
 
 gallery.insertAdjacentHTML("beforeend", galleryMarkup);
+
+gallery.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (event.target.nodeName !== "IMG") {
+    return; // користувач клікнув не по зображенню
+  }
+  // console.log("event.target: ", event.target.dataset.source);
+
+  const getBigImage = event.target.dataset.source;
+
+  const instance = basicLightbox.create(`
+    <img src="${getBigImage}" width="800" height="600">
+`);
+
+  instance.show();
+});
